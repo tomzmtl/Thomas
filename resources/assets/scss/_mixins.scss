@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Berkelium-Bitmap';
+    src:
+        url('../fonts/Berkelium-Bitmap.ttf.woff') format('woff'),
+        url('../fonts/Berkelium-Bitmap.ttf.svg#Berkelium-Bitmap') format('svg'),
+        url('../fonts/Berkelium-Bitmap.ttf.eot'),
+        url('../fonts/Berkelium-Bitmap.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* { box-sizing: border-box }
+
+%berkelium
+{
+    font-family: 'Berkelium-Bitmap', monospace;
+    font-smooth: never;
+    -webkit-font-smoothing : none;
+}
+
+%wrap
+{
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+%shadow
+{
+    span
+    {
+        position: relative;
+        z-index: 100;
+    }
+
+    &::after
+    {
+        display: block;
+        content: attr(data-content);
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        z-index: 50;
+        color: rgba(0,0,0,0.25);
+        -webkit-animation-name: shadowIn;
+    }
+}
