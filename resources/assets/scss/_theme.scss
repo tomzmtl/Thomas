@@ -1,0 +1,30 @@
+#hero
+{
+    background-color: #102B2A;
+
+    h1
+    {
+        color: white;
+    }
+
+    .subtitle
+    {
+        color: white;
+    }
+}
+
+#skills
+{
+    background-color: #D2D8D8;
+}
+
+html
+{
+    &[data-theme='blue']
+    {
+        #hero
+        {
+            background-color: #36F;
+        }
+    }
+}
