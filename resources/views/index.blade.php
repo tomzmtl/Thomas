@@ -141,6 +141,8 @@
 
         <footer>2015</footer>
 
+        <script src="{{ asset('js/ThemeSwitcher.js') }}"></script>
+        <script src="{{ asset('js/Thomas.js') }}"></script>
         <script src="{{ asset('js/scripts.js') }}"></script>
 
     </body>
