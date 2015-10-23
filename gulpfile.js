@@ -5,6 +5,7 @@
     var gulp   = require('gulp'),
         sass   = require('gulp-sass'),
         uglify = require('gulp-uglify'),
+        concat = require('gulp-concat'),
 
         assets = 'resources/assets';
 
@@ -25,6 +26,7 @@
     gulp.task( 'js', function()
     {
         gulp.src([ path.js+'modules/*.js', path.js+'scripts.js' ])
+            .pipe(concat('scripts.js'))
             .pipe(uglify())
             .pipe(gulp.dest('public/js'));
 
