@@ -22,7 +22,6 @@
                         <li><a href="#projects">Projects</a></li>
                         <li><a href="#experience">Experience</a></li>
                         <li><a href="#stack">My Dev Stack</a></li>
-                        <li><a href="#" id="theme">Theme</a></li>
                     </ul>
                 </nav>
                 <nav class="external">
@@ -141,8 +140,6 @@
 
         <footer>2015</footer>
 
-        <script src="{{ asset('js/ThemeSwitcher.js') }}"></script>
-        <script src="{{ asset('js/Thomas.js') }}"></script>
         <script src="{{ asset('js/scripts.js') }}"></script>
 
     </body>
