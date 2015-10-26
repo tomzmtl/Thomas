@@ -54,59 +54,6 @@
     }
 }
 
-@media screen and ( max-width: 600px )
-{
-    #hero
-    {
-        .title
-        {
-            text-align: center;
-        }
-
-        .subtitle
-        {
-            display: block;
-            margin-top: 1rem;
-        }
-    }
-}
-
-@media screen and ( min-width: 600px )
-{
-    #hero
-    {
-        $animDuration: 1.5s;
-        $subtitleDelay: 0.5s;
-
-        height: 100vh;
-        max-height: 600px;
-        padding: 38px 0 0 0;
-
-        h1
-        {
-            font-size: 3.5rem;
-            line-height: 1;
-            -webkit-animation-name: titleScroll;
-
-            &, &::after
-            {
-                -webkit-animation-duration: $animDuration;
-                -webkit-animation-fill-mode: both;
-                -webkit-animation-timing-function: steps(10);
-            }
-        }
-
-        .subtitle
-        {
-            padding-left: 0.7rem;
-            font-size: 1.7rem;
-            -webkit-animation: subtitleScroll $animDuration - $subtitleDelay linear;
-            -webkit-animation-delay: $subtitleDelay;
-            -webkit-animation-fill-mode: both;
-        }
-    }
-}
-
 #thomas
 {
     $pixel: 6.25%;
@@ -207,8 +154,61 @@
     }
 }
 
+
+
+
+@media screen and ( max-width: 600px )
+{
+    #hero
+    {
+        .title
+        {
+            text-align: center;
+        }
+
+        .subtitle
+        {
+            display: block;
+            margin-top: 1rem;
+        }
+    }
+}
+
 @media screen and ( min-width: 600px )
 {
+    #hero
+    {
+        $animDuration: 1.5s;
+        $subtitleDelay: 0.5s;
+
+        height: 100vh;
+        max-height: 600px;
+        padding: 38px 0 0 0;
+
+        h1
+        {
+            font-size: 3.5rem;
+            line-height: 1;
+            -webkit-animation-name: titleScroll;
+
+            &, &::after
+            {
+                -webkit-animation-duration: $animDuration;
+                -webkit-animation-fill-mode: both;
+                -webkit-animation-timing-function: steps(10);
+            }
+        }
+
+        .subtitle
+        {
+            padding-left: 0.7rem;
+            font-size: 1.7rem;
+            -webkit-animation: subtitleScroll $animDuration - $subtitleDelay linear;
+            -webkit-animation-delay: $subtitleDelay;
+            -webkit-animation-fill-mode: both;
+        }
+    }
+
     #thomas
     {
         display: block;

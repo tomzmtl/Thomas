@@ -73,6 +73,40 @@ header
     }
 }
 
+section
+{
+    padding: 4em 0;
+    background: #EEE;
+
+    h1, h2
+    {
+        margin: 0;
+    }
+
+    h1
+    {
+        @extend %berkelium;
+        @extend %shadow;
+
+        position: relative;
+        font-size: 2.5rem;
+    }
+
+    .wrap
+    {
+        max-width: 800px;
+    }
+
+    .content
+    {
+        margin-top: 4%;
+    }
+}
+
+
+
+
+
 @media screen and ( max-width: 599px )
 {
     header
@@ -177,42 +211,6 @@ header
                 display: block;
                 margin: auto 0;
             }
-        }
-    }
-}
-
-section
-{
-    padding: 4em 0;
-    background: #EEE;
-
-    h1, h2
-    {
-        margin: 0;
-    }
-
-    h1
-    {
-        @extend %berkelium;
-        @extend %shadow;
-
-        position: relative;
-        font-size: 2.5rem;
-    }
-
-    .content
-    {
-        margin-top: 1rem;
-    }
-}
-
-@media screen and ( min-width: 750px )
-{
-    section
-    {
-        .content
-        {
-            padding-left: 5vw;
         }
     }
 }
