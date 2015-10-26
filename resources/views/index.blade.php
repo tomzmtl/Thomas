@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Thomas Andreo : Frontend Engineer</title>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Mono:500' rel='stylesheet' type='text/css'>
-
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     </head>
     <body>
 
@@ -19,8 +18,8 @@
                 <nav class="menu">
                     <ul>
                         <li><a href="#skills">Skills</a></li>
-                        <li><a href="#projects">Projects</a></li>
                         <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
                         <li><a href="#stack">My Dev Stack</a></li>
                     </ul>
                 </nav>
@@ -60,38 +59,28 @@
                     <div class="content">
                         <ul>
                             <li>
+                                <h2>Handcrafted web</h2>
+                                <p>I'm a self-taught frontend developer. I believe that well-designed, efficient and handcrafted code makes a difference. I only use libraries when/if necessary. As an example, my site contains 100% handcrafted code.</p>
+                            </li>
+                            <li>
+                                <h2>Semantic Web</h2>
+                                <p>HTML5...</p>
+                            </li>
+                            <li>
+                                <h2>Advanced CSS</h2>
+                                <p>CSS3 has no secret for me, and I keep my self up-to-date with the latest CSS modules like flexbox.</p>
+                            </li>
+                            <li>
+                                <h2>Vanilla Javascript</h2>
+                                <p>We live in a time where jQuery is becoming optional. I code for the future with Vanilla Javascript.</p>
+                            </li>
+                            <li>
                                 <h2>Laravel Development</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi quos fugiat ratione perspiciatis voluptatum, unde quasi.</p>
+                                <p>Whether I need to build a simple app or a more solid project, Laravel is my platform of choice. Makes Backend and Frontend work a breeze. This site is built with Laravel!</p>
                             </li>
                             <li>
                                 <h2>Modular Javascript</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi quos fugiat ratione perspiciatis voluptatum, unde quasi.</p>
-                            </li>
-                            <li>
-                                <h2>Sustainable CSS</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi quos fugiat ratione perspiciatis voluptatum, unde quasi.</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <section id="projects">
-                <div class="wrap">
-                    <h1 data-content="Projects"><span>Projects</span></h1>
-                    <div class="content">
-                        <ul>
-                            <li>
-                                <h2>Project #1</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi quos fugiat ratione perspiciatis voluptatum, unde quasi.</p>
-                            </li>
-                            <li>
-                                <h2>Project #2</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi quos fugiat ratione perspiciatis voluptatum, unde quasi.</p>
-                            </li>
-                            <li>
-                                <h2>Project #3</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi quos fugiat ratione perspiciatis voluptatum, unde quasi.</p>
+                                <p>I'm using Module and Module Factory Patterns to build maintainable, consistent Javascript components. Take a look at the source code and see for yourself!</p>
                             </li>
                         </ul>
                     </div>
@@ -116,6 +105,28 @@
                             <li>
                                 <h2>Web Designer, Frontend Developer, Mentel Inc.</h2>
                                 <p><strong>May 2008 - April 2012</strong></p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi quos fugiat ratione perspiciatis voluptatum, unde quasi.</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects">
+                <div class="wrap">
+                    <h1 data-content="Projects"><span>Projects</span></h1>
+                    <div class="content">
+                        <ul>
+                            <li>
+                                <h2>Project #1</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi quos fugiat ratione perspiciatis voluptatum, unde quasi.</p>
+                            </li>
+                            <li>
+                                <h2>Project #2</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi quos fugiat ratione perspiciatis voluptatum, unde quasi.</p>
+                            </li>
+                            <li>
+                                <h2>Project #3</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem animi quos fugiat ratione perspiciatis voluptatum, unde quasi.</p>
                             </li>
                         </ul>
