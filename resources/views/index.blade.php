@@ -25,8 +25,15 @@
                 </nav>
                 <nav class="external">
                     <ul>
-                        <li class="github"><a href="#"><span>Github</span></a></li>
-                        <li class="linkedin"><a href="#"><span>Linkedin</span></a></li>
+                        <li class="github">
+                            <a href="#"><span>Github</span></a>
+                        </li>
+                        <li class="codepen">
+                            <a href="http://codepen.io/petate/"><span>Codepen</a></span>
+                        </li>
+                        <li class="linkedin">
+                            <a href="#"><span>Linkedin</span></a>
+                        </li>
                     </ul>
                 </nav>
             </div>
