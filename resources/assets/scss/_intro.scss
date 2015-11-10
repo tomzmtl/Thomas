@@ -1,0 +1,31 @@
+#intro
+{
+    padding: 4em 0;
+    background: #111;
+    color: #EEE;
+
+    p
+    {
+        line-height: 1.6;
+    }
+}
+
+@media screen and ( min-width: 600px )
+{
+    #intro
+    {
+        display: flex;
+        padding: 0;
+        height: 20vh;
+
+        .wrap
+        {
+            margin: auto;
+        }
+
+        p
+        {
+            margin: 0;
+        }
+    }
+}

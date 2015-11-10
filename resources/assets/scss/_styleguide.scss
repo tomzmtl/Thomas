@@ -40,11 +40,6 @@ header
         }
     }
 
-    .menu
-    {
-        display: none;
-    }
-
     .external
     {
         li
@@ -80,7 +75,6 @@ header
 
 section
 {
-    padding: 4em 0;
     background: #EEE;
 
     h1, h2
@@ -101,10 +95,18 @@ section
     {
         max-width: 800px;
     }
+}
 
-    .content
+footer
+{
+    padding: 4em 0;
+    background: #CCC;
+    text-align: center;
+    color: #AAA;
+
+    p
     {
-        margin-top: 4%;
+        margin: 0;
     }
 }
 
@@ -112,7 +114,7 @@ section
 
 
 
-@media screen and ( max-width: 599px )
+@media screen and ( max-width: 600px )
 {
     header
     {
@@ -144,7 +146,6 @@ section
         > .wrap
         {
             display: flex;
-            justify-content: space-between;
         }
 
         ul
@@ -152,25 +153,10 @@ section
             display: flex;
         }
 
-        .menu
-        {
-            display: block;
-            margin-top: auto;
-            margin-bottom: auto;
-
-            li
-            {
-                margin-right: 1rem;
-
-                &:last-child
-                {
-                    margin-right: 0;
-                }
-            }
-        }
-
         .external
         {
+            margin-left: auto;
+
             li
             {
                 max-width: 30px;
@@ -186,6 +172,18 @@ section
             {
                 padding-left: 40px;
             }
+        }
+    }
+
+    footer
+    {
+        display: flex;
+        padding: 0;
+        height: 10vh;
+
+        p
+        {
+            margin: auto;
         }
     }
 }

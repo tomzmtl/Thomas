@@ -19,6 +19,7 @@
 
 #hero
 {
+    height: 70vh;
     overflow: hidden;
 
     .title-wrap
@@ -181,8 +182,6 @@
         $animDuration: 1.5s;
         $subtitleDelay: 0.5s;
 
-        height: 100vh;
-        max-height: 600px;
         padding: 38px 0 0 0;
 
         h1
