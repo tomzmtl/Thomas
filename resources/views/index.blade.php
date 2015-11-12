@@ -49,6 +49,9 @@
                         <div class="iris left"></div>
                         <div class="iris right"></div>
                     </div>
+                    <div id="quote" data-endpoint="{{ url() . '/quote/get' }}" data-token="{{ csrf_token() }}">
+                        <p>Insert quote here</p>
+                    </div>
                 </div>
             </section>
 

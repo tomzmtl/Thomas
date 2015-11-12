@@ -155,6 +155,22 @@
     }
 }
 
+#quote
+{
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    background: white;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 400ms;
+
+    &.show
+    {
+        opacity: 1;
+    }
+}
+
 
 
 
