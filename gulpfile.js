@@ -27,7 +27,7 @@
     {
         gulp.src([ path.js+'modules/*.js', path.js+'scripts.js' ])
             .pipe(concat('scripts.js'))
-            .pipe(uglify())
+            //.pipe(uglify())
             .pipe(gulp.dest('public/js'));
 
     });
