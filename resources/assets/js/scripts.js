@@ -4,10 +4,9 @@ document.addEventListener( 'DOMContentLoaded', function()
     //document.getElementById('theme')
         //.addEventListener( 'click', function() { ThemeSwitcher.setTheme('blue') } );
 
-    window.setTimeout( Thomas.hide, 5 );
+    Thomas.init();
 
-    document.getElementById('hero')
-        .addEventListener( 'mouseenter', Thomas.show );
+    window.setTimeout( Thomas.show, 5 );
 
     window.addEventListener( 'scroll', Thomas.moveEyes );
 

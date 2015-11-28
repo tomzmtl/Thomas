@@ -18,14 +18,14 @@
                 <nav class="external">
                     <ul>
                         <li class="github">
-                            <a href="#"><span>Github</span></a>
+                            <a href="https://github.com/tomzmtl"><span>Github</span></a>
                         </li>
                         <li class="codepen">
                             <a href="http://codepen.io/petate/"><span>Codepen</a></span>
                         </li>
-                        <li class="linkedin">
+                        {{-- <li class="linkedin">
                             <a href="#"><span>Linkedin</span></a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </nav>
             </div>
@@ -50,7 +50,8 @@
                         <div class="iris right"></div>
                     </div>
                     <div id="quote" data-endpoint="{{ url() . '/quote/get' }}" data-token="{{ csrf_token() }}">
-                        <p>Insert quote here</p>
+                        <span class="text"></span>
+                        {{-- <span class="trigger">Refresh</span> --}}
                     </div>
                 </div>
             </section>

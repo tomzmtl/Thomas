@@ -1,28 +1,55 @@
 var Ajax = (function()
 {
 
-    var api = {};
-
-    api.post = function ( url, data )
+    function serializeParams ( params )
     {
+        return Object.keys(params).map( function(key)
+        {
+            return encodeURIComponent(key) + '=' + encodeURIComponent(params[key]);
+        })
+        .join('&');
+    }
+
+    function checkForQ ()
+    {
+        if ( typeof Q === 'undefined' )
+        {
+            throw new Error('Ajax module requires kriskowal/q');
+        }
+    }
+
+    function post ( url, data )
+    {
+        checkForQ();
+
+        var dfd = Q.defer();
         var xhr = new XMLHttpRequest();
 
-        var params = Object.keys(data).map(function(key){return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);}).join('&');
-console.log(params);
-        xhr.open('POST', url);
+        xhr.open('POST',url);
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 
-        xhr.onreadystatechange = function() {
-            if (xhr.readyState>3 && xhr.status==200) {  }
+        xhr.onreadystatechange = function()
+        {
+            if ( xhr.readyState !== 3 )
+            {
+                return;
+            }
+
+            if ( xhr.status === 200 )
+            {
+                dfd.resolve(JSON.parse(xhr.responseText));
+            }
         };
 
-        //xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        //xhr.setRequestHeader('Content-length', params.length);
-        xhr.send(params);
+        xhr.send(serializeParams(data));
 
-        return xhr;
+        return dfd.promise;
     }
+
+    var api = {
+        post : post
+    };
 
     return api;
 
-})()
+})();

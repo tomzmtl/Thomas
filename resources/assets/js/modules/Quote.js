@@ -1,38 +1,68 @@
 var Quote = (function()
 {
 
-    var container = null;
+    var container = null,
+        textContainer = null,
+        refreshTrigger = null,
 
-    var current  = null,
+        current  = null,
         endpoint = null;
 
-    var api  = {};
-
-    construct = function ()
+    function construct ()
     {
         queryElements();
+        addEventListeners();
         endpoint = container.dataset.endpoint;
     }
 
     function queryElements ()
     {
         container = document.getElementById('quote');
+        textContainer = container.querySelector('.text');
+        refreshTrigger = container.querySelector('.trigger');
     }
 
-    api.get = function ()
+    function addEventListeners ()
     {
-        console.log( Ajax.post(endpoint,
-            {
-                current : 6,
-                _token : container.dataset.token
-            }) );
+        //refreshTrigger.addEventListener( 'click', get );
     }
 
-    api.init = function ()
+    function get ()
+    {
+        container.classList.add('progress');
+
+        Ajax.post( endpoint,
+        {
+            current : container.dataset.quoteId,
+            _token  : container.dataset.token
+        })
+        .then( onResolve );
+    }
+
+    function onResolve ( response )
+    {
+        container.classList.remove('progress');
+
+        if ( !container.classList.contains('show') )
+        {
+            container.classList.add('show');
+        }
+
+        container.classList.add('show');
+        textContainer.textContent = response.quote;
+        container.dataset.quoteId = response.index;
+    }
+
+    function init ()
     {
         construct();
         return api;
     }
+
+    var api = {
+        init : init,
+        get  : get
+    };
 
     return api;
 
