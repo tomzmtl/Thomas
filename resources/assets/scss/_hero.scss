@@ -1,20 +1,4 @@
-@-webkit-keyframes titleScroll
-{
-    from { opacity: 0; left: -10px; }
-    to   { opacity: 1; left: 0; }
-}
 
-@-webkit-keyframes subtitleScroll
-{
-    from { opacity: 0; left: 10px; }
-    to   { opacity: 1; left: 0; }
-}
-
-@-webkit-keyframes shadowIn
-{
-    from { top: 0;   left: 0 }
-    to   { top: 6px; left: 6px; }
-}
 
 
 #hero
@@ -137,12 +121,12 @@
     &.hiding
     {
         transition-duration: 5s;
-        transform: translateY(50%);
+        transform: translateY(100%);
     }
 
     &.show
     {
-        transition-duration: 150ms;
+        transition-duration: 300ms;
         transform: translateY(0);
     }
 
@@ -158,16 +142,67 @@
 #quote
 {
     position: absolute;
-    bottom: 20px;
-    left: 0;
+    bottom: 40px;
+    right: 200px;
     background: white;
     padding: 20px;
     opacity: 0;
-    transition: opacity 400ms;
+    transition: 400ms;
+    transition-delay: 300ms;
+    z-index: 100;
+    transform: translateX(-10px);
+
+    .trigger
+    {
+        color: #222;
+        cursor: pointer;
+        text-decoration: underline;
+    }
 
     &.show
     {
         opacity: 1;
+        transform: translateX(0);
+    }
+
+    &.progress
+    {
+        .text
+        {
+            opacity: 0.5;
+        }
+
+        .trigger
+        {
+            display: none;
+        }
+    }
+
+    &::before,
+    &::after
+    {
+        content: '';
+        display: block;
+        position: absolute;
+        background: white;
+    }
+
+    &::before
+    {
+        top: 20px;
+        right: -20px;
+        width: 10px;
+        height: 20px;
+    }
+
+    &::after
+    {
+
+        top: 10px;
+        left: -10px;
+        width: calc( 100% + 20px );
+        height: calc( 100% - 20px );
+        z-index: -1;
     }
 }
 
@@ -204,13 +239,13 @@
         {
             font-size: 3.5rem;
             line-height: 1;
-            -webkit-animation-name: titleScroll;
+            animation-name: titleScroll;
 
             &, &::after
             {
-                -webkit-animation-duration: $animDuration;
-                -webkit-animation-fill-mode: both;
-                -webkit-animation-timing-function: steps(10);
+                animation-duration: $animDuration;
+                animation-fill-mode: both;
+                animation-timing-function: steps(10);
             }
         }
 
@@ -218,9 +253,9 @@
         {
             padding-left: 0.7rem;
             font-size: 1.7rem;
-            -webkit-animation: subtitleScroll $animDuration - $subtitleDelay linear;
-            -webkit-animation-delay: $subtitleDelay;
-            -webkit-animation-fill-mode: both;
+            animation: subtitleScroll $animDuration - $subtitleDelay linear;
+            animation-delay: $subtitleDelay;
+            animation-fill-mode: both;
         }
     }
 
@@ -228,4 +263,23 @@
     {
         display: block;
     }
+}
+
+
+@keyframes titleScroll
+{
+    from { opacity: 0; left: -10px; }
+    to   { opacity: 1; left: 0; }
+}
+
+@keyframes subtitleScroll
+{
+    from { opacity: 0; left: 10px; }
+    to   { opacity: 1; left: 0; }
+}
+
+@keyframes shadowIn
+{
+    from { top: 0;   left: 0 }
+    to   { top: 6px; left: 6px; }
 }
