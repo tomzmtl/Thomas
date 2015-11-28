@@ -470,12 +470,18 @@ footer {
     header .external {
       margin-left: auto; }
       header .external li {
-        max-width: 30px;
-        max-height: 30px; }
+        max-height: 30px;
+        max-width: 100%; }
       header .external li + li {
-        margin-left: 1rem; }
+        margin-left: 2rem; }
       header .external a {
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
         padding-left: 40px; }
+      header .external span {
+        display: block;
+        margin: auto 0; }
   footer {
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -484,19 +490,6 @@ footer {
     height: 10vh; }
     footer p {
       margin: auto; } }
-
-@media screen and (min-width: 750px) {
-  header .external li {
-    max-width: 100%; }
-  header .external li + li {
-    margin-left: 2rem; }
-  header .external a {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex; }
-  header .external span {
-    display: block;
-    margin: auto 0; } }
 
 #hero {
   height: 70vh;
@@ -583,6 +576,7 @@ footer {
     top: 37.5%; }
 
 #quote {
+  display: none;
   position: absolute;
   bottom: 40px;
   right: 200px;
@@ -654,7 +648,8 @@ footer {
       animation-delay: 0.5s;
       -webkit-animation-fill-mode: both;
       animation-fill-mode: both; }
-  #thomas {
+  #thomas,
+  #quote {
     display: block; } }
 
 @-webkit-keyframes titleScroll {
