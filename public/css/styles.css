@@ -437,9 +437,9 @@ section {
 
 footer {
   padding: 4em 0;
-  background: #CCC;
+  background: #222;
   text-align: center;
-  color: #AAA; }
+  color: black; }
   footer p {
     margin: 0; }
 
@@ -460,8 +460,12 @@ footer {
     background: rgba(20, 20, 20, 0.9);
     font-size: 0.75rem; }
     header > .wrap {
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex; }
     header ul {
+      display: -webkit-flex;
+      display: -ms-flexbox;
       display: flex; }
     header .external {
       margin-left: auto; }
@@ -473,6 +477,8 @@ footer {
       header .external a {
         padding-left: 40px; }
   footer {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     padding: 0;
     height: 10vh; }
@@ -485,39 +491,19 @@ footer {
   header .external li + li {
     margin-left: 2rem; }
   header .external a {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex; }
   header .external span {
     display: block;
     margin: auto 0; } }
 
-@-webkit-keyframes titleScroll {
-  from {
-    opacity: 0;
-    left: -10px; }
-  to {
-    opacity: 1;
-    left: 0; } }
-
-@-webkit-keyframes subtitleScroll {
-  from {
-    opacity: 0;
-    left: 10px; }
-  to {
-    opacity: 1;
-    left: 0; } }
-
-@-webkit-keyframes shadowIn {
-  from {
-    top: 0;
-    left: 0; }
-  to {
-    top: 6px;
-    left: 6px; } }
-
 #hero {
   height: 70vh;
   overflow: hidden; }
   #hero .title-wrap {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     height: 100%;
     position: relative;
@@ -542,6 +528,7 @@ footer {
   bottom: 0;
   width: 160px;
   height: 160px;
+  -webkit-transform: translateY(100%);
   transform: translateY(100%); }
   #thomas-head, #thomas-shadow {
     position: absolute;
@@ -553,7 +540,9 @@ footer {
     top: 0;
     left: 0;
     background-image: url(../img/thomas.png);
+    transition-property: opacity, -webkit-transform;
     transition-property: transform, opacity;
+    transition-property: transform, opacity, -webkit-transform;
     transition-timing-function: ease-out; }
   #thomas-shadow {
     top: 10px;
@@ -584,23 +573,55 @@ footer {
       left: 62.5%; }
   #thomas.hiding {
     transition-duration: 5s;
-    transform: translateY(50%); }
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%); }
   #thomas.show {
-    transition-duration: 150ms;
+    transition-duration: 300ms;
+    -webkit-transform: translateY(0);
     transform: translateY(0); }
   #thomas.eyes-down .iris {
     top: 37.5%; }
 
 #quote {
   position: absolute;
-  bottom: 20px;
-  left: 0;
+  bottom: 40px;
+  right: 200px;
   background: white;
   padding: 20px;
   opacity: 0;
-  transition: opacity 400ms; }
+  transition: 400ms;
+  transition-delay: 300ms;
+  z-index: 100;
+  -webkit-transform: translateX(-10px);
+  transform: translateX(-10px); }
+  #quote .trigger {
+    color: #222;
+    cursor: pointer;
+    text-decoration: underline; }
   #quote.show {
-    opacity: 1; }
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0); }
+  #quote.progress .text {
+    opacity: 0.5; }
+  #quote.progress .trigger {
+    display: none; }
+  #quote::before, #quote::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: white; }
+  #quote::before {
+    top: 20px;
+    right: -20px;
+    width: 10px;
+    height: 20px; }
+  #quote::after {
+    top: 10px;
+    left: -10px;
+    width: calc( 100% + 20px);
+    height: calc( 100% - 20px);
+    z-index: -1; }
 
 @media screen and (max-width: 600px) {
   #hero .title {
@@ -615,19 +636,74 @@ footer {
     #hero h1 {
       font-size: 3.5rem;
       line-height: 1;
-      -webkit-animation-name: titleScroll; }
+      -webkit-animation-name: titleScroll;
+      animation-name: titleScroll; }
       #hero h1, #hero h1::after {
         -webkit-animation-duration: 1.5s;
+        animation-duration: 1.5s;
         -webkit-animation-fill-mode: both;
-        -webkit-animation-timing-function: steps(10); }
+        animation-fill-mode: both;
+        -webkit-animation-timing-function: steps(10);
+        animation-timing-function: steps(10); }
     #hero .subtitle {
       padding-left: 0.7rem;
       font-size: 1.7rem;
       -webkit-animation: subtitleScroll 1s linear;
+      animation: subtitleScroll 1s linear;
       -webkit-animation-delay: 0.5s;
-      -webkit-animation-fill-mode: both; }
+      animation-delay: 0.5s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both; }
   #thomas {
     display: block; } }
+
+@-webkit-keyframes titleScroll {
+  from {
+    opacity: 0;
+    left: -10px; }
+  to {
+    opacity: 1;
+    left: 0; } }
+
+@keyframes titleScroll {
+  from {
+    opacity: 0;
+    left: -10px; }
+  to {
+    opacity: 1;
+    left: 0; } }
+
+@-webkit-keyframes subtitleScroll {
+  from {
+    opacity: 0;
+    left: 10px; }
+  to {
+    opacity: 1;
+    left: 0; } }
+
+@keyframes subtitleScroll {
+  from {
+    opacity: 0;
+    left: 10px; }
+  to {
+    opacity: 1;
+    left: 0; } }
+
+@-webkit-keyframes shadowIn {
+  from {
+    top: 0;
+    left: 0; }
+  to {
+    top: 6px;
+    left: 6px; } }
+
+@keyframes shadowIn {
+  from {
+    top: 0;
+    left: 0; }
+  to {
+    top: 6px;
+    left: 6px; } }
 
 #intro {
   padding: 4em 0;
@@ -638,6 +714,8 @@ footer {
 
 @media screen and (min-width: 600px) {
   #intro {
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
     padding: 0;
     height: 20vh; }
