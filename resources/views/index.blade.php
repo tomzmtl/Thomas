@@ -42,12 +42,7 @@
                         </div>
                     </div>
                     <div id="thomas">
-                        <div id="thomas-shadow"></div>
-                        <div id="thomas-head"></div>
-                        <div class="eye left"></div>
-                        <div class="eye right"></div>
-                        <div class="iris left"></div>
-                        <div class="iris right"></div>
+                        {!! $thomasMatrix !!}
                     </div>
                     <div id="quote" data-endpoint="{{ url() . '/quote/get' }}" data-token="{{ csrf_token() }}">
                         <span class="text trigger"></span>

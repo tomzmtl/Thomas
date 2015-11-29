@@ -38,100 +38,63 @@
 
 #thomas
 {
-    $pixel: 6.25%;
+    $size: 10px;
 
     display: none;
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 160px;
-    height: 160px;
-    transform: translateY(100%);
+    width: $size * 14;
+    height: $size * 15;
+    overflow: hidden;
 
-    &-head,
-    &-shadow
+    .dot
     {
-        position: absolute;
-        width: inherit;
-        height: inherit;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
+        float: left;
+        width: $size;
+        height: $size;
+        animation: dotIn 200ms;
+        animation-fill-mode: both;
 
-    &-head
-    {
-        top: 0;
-        left: 0;
-        background-image: url(../img/thomas.png);
-        transition-property: transform, opacity;
-        transition-timing-function: ease-out;
-    }
-
-    &-shadow
-    {
-        top: 10px;
-        left: 10px;
-        background-image: url(../img/thomas-shadow.png);
-        opacity: 0.25;
-    }
-
-    .eye
-    {
-        position: absolute;
-        top: $pixel * 5;
-        width: $pixel * 3;
-        height: $pixel * 2;
-        background: white;
-
-        &.left
+        &.skin
         {
-            left: $pixel * 3;
+            background: #ffd9c4;
         }
 
-        &.right
+        &.glasses
         {
-            left: $pixel * 10;
-        }
-    }
-
-    .iris
-    {
-        position: absolute;
-        top: $pixel * 5;
-        left: $pixel;
-        width: $pixel;
-        height: $pixel;
-        background: #161;
-        transition: top 100ms ease-in-out;
-
-        &.left
-        {
-            left: $pixel * 3;
+            background: black;
         }
 
-        &.right
+        &.eyes,
+        &.mouth
         {
-            left: $pixel * 10;
+            background: white;
         }
-    }
 
-    &.hiding
-    {
-        transition-duration: 5s;
-        transform: translateY(100%);
-    }
-
-    &.show
-    {
-        transition-duration: 300ms;
-        transform: translateY(0);
-    }
-
-    &.eyes-down
-    {
-        .iris
+        &.hair1
         {
-            top: $pixel * 6;
+            background: #5c4e46;
+        }
+
+        &.hair2
+        {
+            background: #af9484;
+        }
+
+        &.hair3
+        {
+            background: #e0bda9;
+        }
+
+        &.iris
+        {
+            background: #096706;
+        }
+
+        &.shirt
+        {
+            background: #4f8f00;
         }
     }
 }
@@ -148,7 +111,7 @@
     padding: 0 20px;
     z-index: 100;
     animation: quoteIntroAnimation 400ms;
-    animation-delay: 300ms;
+    animation-delay: 400ms;
     animation-fill-mode: both;
     text-align: center;
 
@@ -196,7 +159,7 @@
         content: 'o';
         position: absolute;
         top: 11px;
-        right: -18px;
+        right: -17px;
         color: white;
         transform: rotateZ(0);
         font-size: 41px;
@@ -291,4 +254,10 @@
 {
     from { opacity: 0; transform: translateX(10px) }
     to   { opacity: 1; transform: translateX(0) }
+}
+
+@keyframes dotIn
+{
+    from { opacity: 0; transform: translateY(10px) }
+    to   { opacity: 1; transform: translateY(0) }
 }

@@ -519,61 +519,33 @@ footer {
   position: absolute;
   right: 0;
   bottom: 0;
-  width: 160px;
-  height: 160px;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%); }
-  #thomas-head, #thomas-shadow {
-    position: absolute;
-    width: inherit;
-    height: inherit;
-    background-repeat: no-repeat;
-    background-size: contain; }
-  #thomas-head {
-    top: 0;
-    left: 0;
-    background-image: url(../img/thomas.png);
-    transition-property: opacity, -webkit-transform;
-    transition-property: transform, opacity;
-    transition-property: transform, opacity, -webkit-transform;
-    transition-timing-function: ease-out; }
-  #thomas-shadow {
-    top: 10px;
-    left: 10px;
-    background-image: url(../img/thomas-shadow.png);
-    opacity: 0.25; }
-  #thomas .eye {
-    position: absolute;
-    top: 31.25%;
-    width: 18.75%;
-    height: 12.5%;
-    background: white; }
-    #thomas .eye.left {
-      left: 18.75%; }
-    #thomas .eye.right {
-      left: 62.5%; }
-  #thomas .iris {
-    position: absolute;
-    top: 31.25%;
-    left: 6.25%;
-    width: 6.25%;
-    height: 6.25%;
-    background: #161;
-    transition: top 100ms ease-in-out; }
-    #thomas .iris.left {
-      left: 18.75%; }
-    #thomas .iris.right {
-      left: 62.5%; }
-  #thomas.hiding {
-    transition-duration: 5s;
-    -webkit-transform: translateY(100%);
-    transform: translateY(100%); }
-  #thomas.show {
-    transition-duration: 300ms;
-    -webkit-transform: translateY(0);
-    transform: translateY(0); }
-  #thomas.eyes-down .iris {
-    top: 37.5%; }
+  width: 140px;
+  height: 150px;
+  overflow: hidden; }
+  #thomas .dot {
+    float: left;
+    width: 10px;
+    height: 10px;
+    -webkit-animation: dotIn 200ms;
+    animation: dotIn 200ms;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
+    #thomas .dot.skin {
+      background: #ffd9c4; }
+    #thomas .dot.glasses {
+      background: black; }
+    #thomas .dot.eyes, #thomas .dot.mouth {
+      background: white; }
+    #thomas .dot.hair1 {
+      background: #5c4e46; }
+    #thomas .dot.hair2 {
+      background: #af9484; }
+    #thomas .dot.hair3 {
+      background: #e0bda9; }
+    #thomas .dot.iris {
+      background: #096706; }
+    #thomas .dot.shirt {
+      background: #4f8f00; }
 
 #quote {
   display: none;
@@ -587,8 +559,8 @@ footer {
   z-index: 100;
   -webkit-animation: quoteIntroAnimation 400ms;
   animation: quoteIntroAnimation 400ms;
-  -webkit-animation-delay: 300ms;
-  animation-delay: 300ms;
+  -webkit-animation-delay: 400ms;
+  animation-delay: 400ms;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   text-align: center; }
@@ -616,7 +588,7 @@ footer {
     content: 'o';
     position: absolute;
     top: 11px;
-    right: -18px;
+    right: -17px;
     color: white;
     -webkit-transform: rotateZ(0);
     transform: rotateZ(0);
@@ -728,6 +700,26 @@ footer {
     opacity: 1;
     -webkit-transform: translateX(0);
     transform: translateX(0); } }
+
+@-webkit-keyframes dotIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
+
+@keyframes dotIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px); }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); } }
 
 #intro {
   padding: 4em 0;
