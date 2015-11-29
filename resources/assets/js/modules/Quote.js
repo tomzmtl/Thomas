@@ -24,7 +24,7 @@ var Quote = (function()
 
     function addEventListeners ()
     {
-        //refreshTrigger.addEventListener( 'click', get );
+        refreshTrigger.addEventListener( 'click', get );
     }
 
     function get ()
@@ -42,14 +42,8 @@ var Quote = (function()
     function onResolve ( response )
     {
         container.classList.remove('progress');
-
-        if ( !container.classList.contains('show') )
-        {
-            container.classList.add('show');
-        }
-
         container.classList.add('show');
-        textContainer.textContent = response.quote;
+        textContainer.innerHTML = response.quote;
         container.dataset.quoteId = response.index;
     }
 

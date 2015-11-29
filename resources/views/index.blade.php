@@ -50,7 +50,7 @@
                         <div class="iris right"></div>
                     </div>
                     <div id="quote" data-endpoint="{{ url() . '/quote/get' }}" data-token="{{ csrf_token() }}">
-                        <span class="text"></span>
+                        <span class="text trigger"></span>
                         {{-- <span class="trigger">Refresh</span> --}}
                     </div>
                 </div>
