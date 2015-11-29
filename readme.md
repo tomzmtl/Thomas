@@ -1,4 +1,4 @@
-My personal website. [Click here to have a look](http://thomas.andreo.ca)
+My personal website. [Click here to have a look](http://thomas.andreo.ca)!
 
 ### Technology stack
 
@@ -10,4 +10,4 @@ My personal website. [Click here to have a look](http://thomas.andreo.ca)
 
 ### License
 
-This is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+This is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
